@@ -1,19 +1,20 @@
 import React from "react";
 import {
   Link as RouterLink,
-  LinkProps as RouterLinkProps
+  LinkProps as RouterLinkProps,
 } from "react-router-dom";
 import {
   Link as MuiLink,
   LinkProps as MuiLinkProps,
   List,
-  ListItemButton
+  ListItemButton,
 } from "@mui/material";
 
 const Link = React.forwardRef(
-  (props: MuiLinkProps & RouterLinkProps, ref: React.Ref) => (
-    <MuiLink component={RouterLink} {...props} ref={ref} />
-  )
+  (
+    props: MuiLinkProps & RouterLinkProps,
+    ref: React.Ref<HTMLAnchorElement>,
+  ) => <MuiLink component={RouterLink} {...props} ref={ref} />,
 );
 
 export const LinkList = ({ items }: { items: { [text: string]: string } }) => {
